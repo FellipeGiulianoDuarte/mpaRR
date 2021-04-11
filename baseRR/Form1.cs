@@ -15,6 +15,11 @@ namespace baseRR
         public formBase()
         {
             InitializeComponent();
+            nudDesc1.Maximum = Int64.MaxValue;
+            nudDesc2.Maximum = Int64.MaxValue;
+            nudDesc3.Maximum = Int64.MaxValue;
+            nudJuros.Maximum = Int64.MaxValue;
+            nudValor.Maximum = Int64.MaxValue;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -43,6 +48,27 @@ namespace baseRR
             {
                 chkbCalendario.Text = "Exibir calendário";
                 mcMes.Visible = false;
+            }
+        }
+
+        private void btnCalc_Click(object sender, EventArgs e)
+        {
+            double juros = (double)nudJuros.Value / 100;
+            double jurosFixo = 2 / 100;
+            double valor = (double)nudValor.Value;
+            double desc1 = (double)nudDesc1.Value;
+            double desc2 = (double)nudDesc2.Value;
+            double desc3 = (double)nudDesc3.Value;
+
+            //valor + juros se tiver - desconto
+
+            if(DateTime.Now > dtpVencimento.Value)
+            {
+
+            }
+            else
+            {
+                txtbResul.Text = $"{(((valor - desc1) - desc2) - desc3)}";
             }
         }
     }

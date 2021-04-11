@@ -48,9 +48,10 @@ namespace baseRR
             this.nudDesc2 = new System.Windows.Forms.NumericUpDown();
             this.nudDesc3 = new System.Windows.Forms.NumericUpDown();
             this.txtbResul = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpVencimento = new System.Windows.Forms.DateTimePicker();
             this.mcMes = new System.Windows.Forms.MonthCalendar();
             this.chkbCalendario = new System.Windows.Forms.CheckBox();
+            this.btnCalc = new System.Windows.Forms.Button();
             this.pButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudJuros)).BeginInit();
@@ -181,7 +182,7 @@ namespace baseRR
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(212, 428);
+            this.label7.Location = new System.Drawing.Point(212, 456);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 31);
             this.label7.TabIndex = 7;
@@ -232,19 +233,19 @@ namespace baseRR
             // 
             // txtbResul
             // 
-            this.txtbResul.Location = new System.Drawing.Point(445, 425);
+            this.txtbResul.Location = new System.Drawing.Point(445, 453);
             this.txtbResul.Name = "txtbResul";
             this.txtbResul.ReadOnly = true;
             this.txtbResul.Size = new System.Drawing.Size(150, 38);
             this.txtbResul.TabIndex = 13;
             // 
-            // dateTimePicker1
+            // dtpVencimento
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(445, 107);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(150, 38);
-            this.dateTimePicker1.TabIndex = 14;
+            this.dtpVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpVencimento.Location = new System.Drawing.Point(445, 107);
+            this.dtpVencimento.Name = "dtpVencimento";
+            this.dtpVencimento.Size = new System.Drawing.Size(150, 38);
+            this.dtpVencimento.TabIndex = 14;
             // 
             // mcMes
             // 
@@ -268,15 +269,28 @@ namespace baseRR
             this.chkbCalendario.UseVisualStyleBackColor = false;
             this.chkbCalendario.CheckedChanged += new System.EventHandler(this.chkbCalendario_CheckedChanged);
             // 
+            // btnCalc
+            // 
+            this.btnCalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.btnCalc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCalc.Location = new System.Drawing.Point(445, 409);
+            this.btnCalc.Name = "btnCalc";
+            this.btnCalc.Size = new System.Drawing.Size(150, 38);
+            this.btnCalc.TabIndex = 18;
+            this.btnCalc.Text = "Calcular";
+            this.btnCalc.UseVisualStyleBackColor = false;
+            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
+            // 
             // formBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(882, 565);
+            this.Controls.Add(this.btnCalc);
             this.Controls.Add(this.chkbCalendario);
             this.Controls.Add(this.mcMes);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpVencimento);
             this.Controls.Add(this.txtbResul);
             this.Controls.Add(this.nudDesc3);
             this.Controls.Add(this.nudDesc2);
@@ -332,9 +346,10 @@ namespace baseRR
         private System.Windows.Forms.NumericUpDown nudDesc2;
         private System.Windows.Forms.NumericUpDown nudDesc3;
         private System.Windows.Forms.TextBox txtbResul;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpVencimento;
         private System.Windows.Forms.MonthCalendar mcMes;
         private System.Windows.Forms.CheckBox chkbCalendario;
+        private System.Windows.Forms.Button btnCalc;
     }
 }
 
