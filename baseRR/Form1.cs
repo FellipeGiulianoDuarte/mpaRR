@@ -15,9 +15,7 @@ namespace baseRR
         public formBase()
         {
             InitializeComponent();
-            nudDesc1.Maximum = Int64.MaxValue;
-            nudDesc2.Maximum = Int64.MaxValue;
-            nudDesc3.Maximum = Int64.MaxValue;
+            nudDesconto.Maximum = Int64.MaxValue;
             nudJuros.Maximum = Int64.MaxValue;
             nudValor.Maximum = Int64.MaxValue;
         }
@@ -53,22 +51,62 @@ namespace baseRR
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            double juros = (double)nudJuros.Value / 100;
-            double jurosFixo = 2 / 100;
+            //valores
             double valor = (double)nudValor.Value;
-            double desc1 = (double)nudDesc1.Value;
-            double desc2 = (double)nudDesc2.Value;
-            double desc3 = (double)nudDesc3.Value;
+            double desc1 = (double)nudDesconto.Value;
+            double semJ = valor - desc1;
 
-            //valor + juros se tiver - desconto
+            //datas
+            DateTime DataVencimento = dtpVencimento.Value;
+            DateTime DataAtual = DateTime.Now;
 
-            if(DateTime.Now > dtpVencimento.Value)
+            try
             {
+                //data pra trás
+                int Anos = new DateTime(DateTime.Now.Subtract(DataVencimento).Ticks).Year - 1;
+                DateTime AnosT = DataVencimento.AddYears(Anos);
+                int Meses = 0;
+                for (int n = 1; n <= 12; n++)
+                {
+                    if (AnosT.AddMonths(n) == DataAtual)
+                    {
+                        Meses = n;
+                        break;
+                    }
+                    else if (AnosT.AddMonths(n) >= DataAtual)
+                    {
+                        Meses = n - 1;
+                        break;
+                    }
+                }
+                int Dias = DataAtual.Subtract(AnosT.AddMonths(Meses)).Days;
 
+                double valorJ = valor * 2 / 100 + ((double)nudJuros.Value * Dias) + valor - desc1;
+
+                txtbResul.Text = $"{valorJ}";
             }
-            else
+            catch
             {
-                txtbResul.Text = $"{(((valor - desc1) - desc2) - desc3)}";
+                //data pra frente
+                int Anos = new DateTime(DateTime.Now.Subtract(DataAtual).Ticks).Year - 1;
+                DateTime AnosT = DataAtual.AddYears(Anos);
+                int Meses = 0;
+                for (int n = 1; n <= 12; n++)
+                {
+                    if (AnosT.AddMonths(n) == DataVencimento)
+                    {
+                        Meses = n;
+                        break;
+                    }
+                    else if (AnosT.AddMonths(n) >= DataVencimento)
+                    {
+                        Meses = n - 1;
+                        break;
+                    }
+                }
+                int Dias = DataVencimento.Subtract(AnosT.AddMonths(Meses)).Days;
+
+                txtbResul.Text = $"{semJ}";
             }
         }
     }

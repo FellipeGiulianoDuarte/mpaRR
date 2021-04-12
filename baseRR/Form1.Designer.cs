@@ -39,25 +39,21 @@ namespace baseRR
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.nudValor = new System.Windows.Forms.NumericUpDown();
             this.nudJuros = new System.Windows.Forms.NumericUpDown();
-            this.nudDesc1 = new System.Windows.Forms.NumericUpDown();
-            this.nudDesc2 = new System.Windows.Forms.NumericUpDown();
-            this.nudDesc3 = new System.Windows.Forms.NumericUpDown();
+            this.nudDesconto = new System.Windows.Forms.NumericUpDown();
             this.txtbResul = new System.Windows.Forms.TextBox();
             this.dtpVencimento = new System.Windows.Forms.DateTimePicker();
             this.mcMes = new System.Windows.Forms.MonthCalendar();
             this.chkbCalendario = new System.Windows.Forms.CheckBox();
             this.btnCalc = new System.Windows.Forms.Button();
+            this.chkbDesconto = new System.Windows.Forms.CheckBox();
+            this.chkbAtrasado = new System.Windows.Forms.CheckBox();
             this.pButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudJuros)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDesc1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDesc2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDesc3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDesconto)).BeginInit();
             this.SuspendLayout();
             // 
             // pButtons
@@ -148,41 +144,23 @@ namespace baseRR
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(212, 176);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(227, 31);
+            this.label3.Size = new System.Drawing.Size(152, 31);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Juros por dia (em %):";
+            this.label3.Text = "Mora por dia:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(212, 239);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 31);
+            this.label4.Size = new System.Drawing.Size(115, 31);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Desconto 1:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(212, 365);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 31);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Desconto 3:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(212, 302);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 31);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Desconto 2:";
+            this.label4.Text = "Desconto:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(212, 456);
+            this.label7.Location = new System.Drawing.Point(212, 489);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 31);
             this.label7.TabIndex = 7;
@@ -207,33 +185,17 @@ namespace baseRR
             this.nudJuros.TabIndex = 9;
             this.nudJuros.ValueChanged += new System.EventHandler(this.nudJuros_ValueChanged);
             // 
-            // nudDesc1
+            // nudDesconto
             // 
-            this.nudDesc1.DecimalPlaces = 2;
-            this.nudDesc1.Location = new System.Drawing.Point(445, 235);
-            this.nudDesc1.Name = "nudDesc1";
-            this.nudDesc1.Size = new System.Drawing.Size(150, 38);
-            this.nudDesc1.TabIndex = 10;
-            // 
-            // nudDesc2
-            // 
-            this.nudDesc2.DecimalPlaces = 2;
-            this.nudDesc2.Location = new System.Drawing.Point(445, 300);
-            this.nudDesc2.Name = "nudDesc2";
-            this.nudDesc2.Size = new System.Drawing.Size(150, 38);
-            this.nudDesc2.TabIndex = 11;
-            // 
-            // nudDesc3
-            // 
-            this.nudDesc3.DecimalPlaces = 2;
-            this.nudDesc3.Location = new System.Drawing.Point(445, 363);
-            this.nudDesc3.Name = "nudDesc3";
-            this.nudDesc3.Size = new System.Drawing.Size(150, 38);
-            this.nudDesc3.TabIndex = 12;
+            this.nudDesconto.DecimalPlaces = 2;
+            this.nudDesconto.Location = new System.Drawing.Point(445, 235);
+            this.nudDesconto.Name = "nudDesconto";
+            this.nudDesconto.Size = new System.Drawing.Size(150, 38);
+            this.nudDesconto.TabIndex = 10;
             // 
             // txtbResul
             // 
-            this.txtbResul.Location = new System.Drawing.Point(445, 453);
+            this.txtbResul.Location = new System.Drawing.Point(445, 486);
             this.txtbResul.Name = "txtbResul";
             this.txtbResul.ReadOnly = true;
             this.txtbResul.Size = new System.Drawing.Size(150, 38);
@@ -241,6 +203,8 @@ namespace baseRR
             // 
             // dtpVencimento
             // 
+            this.dtpVencimento.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dtpVencimento.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtpVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpVencimento.Location = new System.Drawing.Point(445, 107);
             this.dtpVencimento.Name = "dtpVencimento";
@@ -249,7 +213,8 @@ namespace baseRR
             // 
             // mcMes
             // 
-            this.mcMes.BackColor = System.Drawing.SystemColors.Window;
+            this.mcMes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
+            this.mcMes.Enabled = false;
             this.mcMes.Location = new System.Drawing.Point(607, 174);
             this.mcMes.Name = "mcMes";
             this.mcMes.TabIndex = 15;
@@ -273,7 +238,7 @@ namespace baseRR
             // 
             this.btnCalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.btnCalc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCalc.Location = new System.Drawing.Point(445, 409);
+            this.btnCalc.Location = new System.Drawing.Point(445, 432);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(150, 38);
             this.btnCalc.TabIndex = 18;
@@ -281,25 +246,49 @@ namespace baseRR
             this.btnCalc.UseVisualStyleBackColor = false;
             this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
             // 
+            // chkbDesconto
+            // 
+            this.chkbDesconto.Appearance = System.Windows.Forms.Appearance.Button;
+            this.chkbDesconto.AutoSize = true;
+            this.chkbDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.chkbDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chkbDesconto.Location = new System.Drawing.Point(212, 310);
+            this.chkbDesconto.Name = "chkbDesconto";
+            this.chkbDesconto.Size = new System.Drawing.Size(181, 41);
+            this.chkbDesconto.TabIndex = 19;
+            this.chkbDesconto.Text = "desconto em %";
+            this.chkbDesconto.UseVisualStyleBackColor = false;
+            // 
+            // chkbAtrasado
+            // 
+            this.chkbAtrasado.Appearance = System.Windows.Forms.Appearance.Button;
+            this.chkbAtrasado.AutoSize = true;
+            this.chkbAtrasado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.chkbAtrasado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chkbAtrasado.Location = new System.Drawing.Point(212, 357);
+            this.chkbAtrasado.Name = "chkbAtrasado";
+            this.chkbAtrasado.Size = new System.Drawing.Size(282, 41);
+            this.chkbAtrasado.TabIndex = 20;
+            this.chkbAtrasado.Text = "Atrasado perde desconto";
+            this.chkbAtrasado.UseVisualStyleBackColor = false;
+            // 
             // formBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(882, 565);
+            this.Controls.Add(this.chkbAtrasado);
+            this.Controls.Add(this.chkbDesconto);
             this.Controls.Add(this.btnCalc);
             this.Controls.Add(this.chkbCalendario);
             this.Controls.Add(this.mcMes);
             this.Controls.Add(this.dtpVencimento);
             this.Controls.Add(this.txtbResul);
-            this.Controls.Add(this.nudDesc3);
-            this.Controls.Add(this.nudDesc2);
-            this.Controls.Add(this.nudDesc1);
+            this.Controls.Add(this.nudDesconto);
             this.Controls.Add(this.nudJuros);
             this.Controls.Add(this.nudValor);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -318,9 +307,7 @@ namespace baseRR
             this.pButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudJuros)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDesc1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDesc2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDesc3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDesconto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,19 +324,17 @@ namespace baseRR
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown nudValor;
         private System.Windows.Forms.NumericUpDown nudJuros;
-        private System.Windows.Forms.NumericUpDown nudDesc1;
-        private System.Windows.Forms.NumericUpDown nudDesc2;
-        private System.Windows.Forms.NumericUpDown nudDesc3;
         private System.Windows.Forms.TextBox txtbResul;
         private System.Windows.Forms.DateTimePicker dtpVencimento;
         private System.Windows.Forms.MonthCalendar mcMes;
         private System.Windows.Forms.CheckBox chkbCalendario;
         private System.Windows.Forms.Button btnCalc;
+        private System.Windows.Forms.NumericUpDown nudDesconto;
+        private System.Windows.Forms.CheckBox chkbDesconto;
+        private System.Windows.Forms.CheckBox chkbAtrasado;
     }
 }
 
