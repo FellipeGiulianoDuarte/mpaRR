@@ -60,6 +60,9 @@ namespace baseRR
             DateTime DataVencimento = dtpVencimento.Value;
             DateTime DataAtual = DateTime.Now;
 
+            double desc2 = desc1 / 100;
+            double SemJP = valor - (desc2 * valor);
+
             try
             {
                 //data pra trás
@@ -81,9 +84,22 @@ namespace baseRR
                 }
                 int Dias = DataAtual.Subtract(AnosT.AddMonths(Meses)).Days;
 
-                double valorJ = valor * 2 / 100 + ((double)nudJuros.Value * Dias) + valor - desc1;
+                if (chkbAtrasado.Checked)
+                {
+                    desc1 = 0;
+                }
 
-                txtbResul.Text = $"{valorJ}";
+                if (chkbDesconto.Checked)
+                {
+                    double valorJ = valor * 2 / 100 + ((double)nudJuros.Value * Dias) + valor - (valor * desc2);
+                    txtbResul.Text = $"R${valorJ.ToString("N2")}";
+                }
+                else
+                {
+                    double valorJ = valor * 2 / 100 + ((double)nudJuros.Value * Dias) + valor - desc1;
+                    txtbResul.Text = $"R${valorJ.ToString("N2")}";
+                }
+
             }
             catch
             {
@@ -106,7 +122,14 @@ namespace baseRR
                 }
                 int Dias = DataVencimento.Subtract(AnosT.AddMonths(Meses)).Days;
 
-                txtbResul.Text = $"{semJ}";
+                if (chkbDesconto.Checked)
+                {
+                    txtbResul.Text = $"R${SemJP.ToString("N2")}";
+                }
+                else
+                {
+                    txtbResul.Text = $"R${semJ.ToString("N2")}";
+                }
             }
         }
     }
