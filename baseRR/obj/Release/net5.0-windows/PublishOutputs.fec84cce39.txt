@@ -1,0 +1,5 @@
+C:\Users\vagner\Desktop\mpa.RR\baseRR.exe
+C:\Users\vagner\Desktop\mpa.RR\baseRR.dll
+C:\Users\vagner\Desktop\mpa.RR\baseRR.deps.json
+C:\Users\vagner\Desktop\mpa.RR\baseRR.runtimeconfig.json
+C:\Users\vagner\Desktop\mpa.RR\baseRR.pdb

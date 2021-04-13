@@ -156,5 +156,39 @@ namespace baseRR
                 }
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            nudDesconto.Value = 0;
+            nudJuros.Value = (decimal)0.33;
+            nudMora.Value = 0;
+            nudResJuros.Value = 0;
+            nudValor.Value = 0;
+            txtbResul.Text =" ";
+        }
+
+        private void nudValor_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudValor.Value == 0)
+            {
+                btnCalc.Enabled = false;
+            }
+            else
+            {
+                btnCalc.Enabled = true;
+            }
+        }
+
+        private void chkbDesconto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkbDesconto.Checked)
+            {
+                nudDesconto.Maximum = 100;
+            }
+            if (chkbDesconto.Checked == false)
+            {
+                nudDesconto.Maximum = maxValue;
+            }
+        }
     }
 }

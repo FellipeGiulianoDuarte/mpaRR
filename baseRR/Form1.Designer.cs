@@ -57,6 +57,7 @@ namespace baseRR
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.nudResJuros = new System.Windows.Forms.NumericUpDown();
+            this.btnClear = new System.Windows.Forms.Button();
             this.pButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).BeginInit();
@@ -205,6 +206,7 @@ namespace baseRR
             this.nudValor.Size = new System.Drawing.Size(175, 34);
             this.nudValor.TabIndex = 8;
             this.nudValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudValor.ValueChanged += new System.EventHandler(this.nudValor_ValueChanged);
             // 
             // nudJuros
             // 
@@ -263,7 +265,7 @@ namespace baseRR
             this.mcMes.Enabled = false;
             this.mcMes.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mcMes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.mcMes.Location = new System.Drawing.Point(604, 146);
+            this.mcMes.Location = new System.Drawing.Point(606, 146);
             this.mcMes.Name = "mcMes";
             this.mcMes.TabIndex = 15;
             this.mcMes.Visible = false;
@@ -271,20 +273,21 @@ namespace baseRR
             // chkbCalendario
             // 
             this.chkbCalendario.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkbCalendario.AutoSize = true;
             this.chkbCalendario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.chkbCalendario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkbCalendario.Location = new System.Drawing.Point(638, 55);
+            this.chkbCalendario.Location = new System.Drawing.Point(631, 55);
             this.chkbCalendario.Name = "chkbCalendario";
-            this.chkbCalendario.Size = new System.Drawing.Size(194, 41);
+            this.chkbCalendario.Size = new System.Drawing.Size(212, 41);
             this.chkbCalendario.TabIndex = 17;
             this.chkbCalendario.Text = "Exibir calendário";
+            this.chkbCalendario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkbCalendario.UseVisualStyleBackColor = false;
             this.chkbCalendario.CheckedChanged += new System.EventHandler(this.chkbCalendario_CheckedChanged);
             // 
             // btnCalc
             // 
             this.btnCalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.btnCalc.Enabled = false;
             this.btnCalc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCalc.Location = new System.Drawing.Point(416, 315);
             this.btnCalc.Name = "btnCalc";
@@ -300,12 +303,13 @@ namespace baseRR
             this.chkbDesconto.AutoSize = true;
             this.chkbDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.chkbDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkbDesconto.Location = new System.Drawing.Point(645, 378);
+            this.chkbDesconto.Location = new System.Drawing.Point(647, 378);
             this.chkbDesconto.Name = "chkbDesconto";
             this.chkbDesconto.Size = new System.Drawing.Size(181, 41);
             this.chkbDesconto.TabIndex = 19;
             this.chkbDesconto.Text = "desconto em %";
             this.chkbDesconto.UseVisualStyleBackColor = false;
+            this.chkbDesconto.CheckedChanged += new System.EventHandler(this.chkbDesconto_CheckedChanged);
             // 
             // chkbAtrasado
             // 
@@ -313,7 +317,7 @@ namespace baseRR
             this.chkbAtrasado.AutoSize = true;
             this.chkbAtrasado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.chkbAtrasado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkbAtrasado.Location = new System.Drawing.Point(594, 425);
+            this.chkbAtrasado.Location = new System.Drawing.Point(596, 425);
             this.chkbAtrasado.Name = "chkbAtrasado";
             this.chkbAtrasado.Size = new System.Drawing.Size(282, 41);
             this.chkbAtrasado.TabIndex = 20;
@@ -366,9 +370,9 @@ namespace baseRR
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(200, 379);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(158, 31);
+            this.label8.Size = new System.Drawing.Size(159, 31);
             this.label8.TabIndex = 25;
-            this.label8.Text = "valor do juros:";
+            this.label8.Text = "Valor do juros:";
             // 
             // nudResJuros
             // 
@@ -383,12 +387,25 @@ namespace baseRR
             this.nudResJuros.TabIndex = 26;
             this.nudResJuros.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClear.Location = new System.Drawing.Point(200, 315);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(186, 38);
+            this.btnClear.TabIndex = 27;
+            this.btnClear.Text = "Limpar campos";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // formBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(882, 565);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.nudResJuros);
             this.Controls.Add(this.label8);
@@ -462,6 +479,7 @@ namespace baseRR
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown nudResJuros;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 

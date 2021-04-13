@@ -70,7 +70,7 @@
   <data name="btnLogout.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAADWxJREFUeF7t1s2NXMkRhVHutBwTuBwzaIpMoScySSbMUku5IFVxUESTnVX1fiLz
+        vAAADrwBlbxySQAADWxJREFUeF7t1s2NXMkRhVHutBwTuBwzaIpMoScySSbMUku5IFVxUESTnVX1fiLz
         ZUacA1ygtw1Uvvi+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAADA3b9u+5+Zfdr32wDSEgBm7QkAIDUBYNaeAABSEwBm7QkAIDUBYNaeAABSEwBm7QkAIDUBYNae
@@ -200,6 +200,9 @@
     <value>True</value>
   </metadata>
   <metadata name="nudResJuros.Locked" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnClear.Locked" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>True</value>
   </metadata>
   <metadata name="$this.Locked" type="System.Boolean, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
