@@ -66,6 +66,19 @@ namespace baseRR
             double desc2 = desc1 / 100;
             double SemJP = valor - (desc2 * valor);
 
+            if(DateTime.Now.Date.CompareTo(dtpVencimento.Value.Date) == 0)
+            {
+                if (chkbDesconto.Checked)
+                {
+                    txtbResul.Text = $"R${SemJP:N2}";
+                }
+                else
+                {
+                    txtbResul.Text = $"R${semJ:N2}";
+                }
+            }
+            else
+
             try
             {
                 //data pra trás
