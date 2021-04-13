@@ -50,10 +50,14 @@ namespace baseRR
             this.btnCalc = new System.Windows.Forms.Button();
             this.chkbDesconto = new System.Windows.Forms.CheckBox();
             this.chkbAtrasado = new System.Windows.Forms.CheckBox();
+            this.nudMora = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.pButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudJuros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDesconto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMora)).BeginInit();
             this.SuspendLayout();
             // 
             // pButtons
@@ -124,7 +128,8 @@ namespace baseRR
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(212, 50);
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(200, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(175, 31);
             this.label1.TabIndex = 1;
@@ -133,7 +138,8 @@ namespace baseRR
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(212, 113);
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(200, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 31);
             this.label2.TabIndex = 2;
@@ -142,7 +148,8 @@ namespace baseRR
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(212, 176);
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Location = new System.Drawing.Point(200, 187);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 31);
             this.label3.TabIndex = 3;
@@ -151,7 +158,8 @@ namespace baseRR
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(212, 239);
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.Location = new System.Drawing.Point(200, 253);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 31);
             this.label4.TabIndex = 4;
@@ -160,7 +168,8 @@ namespace baseRR
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(212, 489);
+            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label7.Location = new System.Drawing.Point(200, 481);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 31);
             this.label7.TabIndex = 7;
@@ -168,46 +177,60 @@ namespace baseRR
             // 
             // nudValor
             // 
-            this.nudValor.BackColor = System.Drawing.SystemColors.Window;
+            this.nudValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.nudValor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudValor.DecimalPlaces = 2;
-            this.nudValor.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.nudValor.Location = new System.Drawing.Point(445, 48);
+            this.nudValor.ForeColor = System.Drawing.SystemColors.Window;
+            this.nudValor.Location = new System.Drawing.Point(416, 55);
             this.nudValor.Name = "nudValor";
-            this.nudValor.Size = new System.Drawing.Size(150, 38);
+            this.nudValor.Size = new System.Drawing.Size(150, 34);
             this.nudValor.TabIndex = 8;
             // 
             // nudJuros
             // 
+            this.nudJuros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.nudJuros.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudJuros.DecimalPlaces = 2;
-            this.nudJuros.Location = new System.Drawing.Point(445, 174);
+            this.nudJuros.ForeColor = System.Drawing.SystemColors.Window;
+            this.nudJuros.Location = new System.Drawing.Point(416, 185);
             this.nudJuros.Name = "nudJuros";
-            this.nudJuros.Size = new System.Drawing.Size(150, 38);
+            this.nudJuros.Size = new System.Drawing.Size(150, 34);
             this.nudJuros.TabIndex = 9;
+            this.nudJuros.Value = new decimal(new int[] {
+            33,
+            0,
+            0,
+            131072});
             this.nudJuros.ValueChanged += new System.EventHandler(this.nudJuros_ValueChanged);
             // 
             // nudDesconto
             // 
+            this.nudDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.nudDesconto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudDesconto.DecimalPlaces = 2;
-            this.nudDesconto.Location = new System.Drawing.Point(445, 235);
+            this.nudDesconto.ForeColor = System.Drawing.SystemColors.Window;
+            this.nudDesconto.Location = new System.Drawing.Point(416, 250);
             this.nudDesconto.Name = "nudDesconto";
-            this.nudDesconto.Size = new System.Drawing.Size(150, 38);
+            this.nudDesconto.Size = new System.Drawing.Size(150, 34);
             this.nudDesconto.TabIndex = 10;
             // 
             // txtbResul
             // 
-            this.txtbResul.Location = new System.Drawing.Point(445, 486);
+            this.txtbResul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.txtbResul.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbResul.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtbResul.Location = new System.Drawing.Point(416, 478);
             this.txtbResul.Name = "txtbResul";
             this.txtbResul.ReadOnly = true;
-            this.txtbResul.Size = new System.Drawing.Size(150, 38);
+            this.txtbResul.Size = new System.Drawing.Size(150, 31);
             this.txtbResul.TabIndex = 13;
             // 
             // dtpVencimento
             // 
-            this.dtpVencimento.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.dtpVencimento.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtpVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpVencimento.Location = new System.Drawing.Point(445, 107);
+            this.dtpVencimento.Location = new System.Drawing.Point(416, 120);
             this.dtpVencimento.Name = "dtpVencimento";
+            this.dtpVencimento.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpVencimento.Size = new System.Drawing.Size(150, 38);
             this.dtpVencimento.TabIndex = 14;
             // 
@@ -215,7 +238,8 @@ namespace baseRR
             // 
             this.mcMes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.mcMes.Enabled = false;
-            this.mcMes.Location = new System.Drawing.Point(607, 174);
+            this.mcMes.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.mcMes.Location = new System.Drawing.Point(600, 146);
             this.mcMes.Name = "mcMes";
             this.mcMes.TabIndex = 15;
             this.mcMes.Visible = false;
@@ -226,7 +250,7 @@ namespace baseRR
             this.chkbCalendario.AutoSize = true;
             this.chkbCalendario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.chkbCalendario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkbCalendario.Location = new System.Drawing.Point(634, 108);
+            this.chkbCalendario.Location = new System.Drawing.Point(634, 55);
             this.chkbCalendario.Name = "chkbCalendario";
             this.chkbCalendario.Size = new System.Drawing.Size(194, 41);
             this.chkbCalendario.TabIndex = 17;
@@ -238,7 +262,7 @@ namespace baseRR
             // 
             this.btnCalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.btnCalc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCalc.Location = new System.Drawing.Point(445, 432);
+            this.btnCalc.Location = new System.Drawing.Point(416, 430);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(150, 38);
             this.btnCalc.TabIndex = 18;
@@ -252,7 +276,7 @@ namespace baseRR
             this.chkbDesconto.AutoSize = true;
             this.chkbDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.chkbDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkbDesconto.Location = new System.Drawing.Point(212, 310);
+            this.chkbDesconto.Location = new System.Drawing.Point(641, 429);
             this.chkbDesconto.Name = "chkbDesconto";
             this.chkbDesconto.Size = new System.Drawing.Size(181, 41);
             this.chkbDesconto.TabIndex = 19;
@@ -265,12 +289,45 @@ namespace baseRR
             this.chkbAtrasado.AutoSize = true;
             this.chkbAtrasado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.chkbAtrasado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chkbAtrasado.Location = new System.Drawing.Point(212, 357);
+            this.chkbAtrasado.Location = new System.Drawing.Point(590, 476);
             this.chkbAtrasado.Name = "chkbAtrasado";
             this.chkbAtrasado.Size = new System.Drawing.Size(282, 41);
             this.chkbAtrasado.TabIndex = 20;
             this.chkbAtrasado.Text = "Atrasado perde desconto";
             this.chkbAtrasado.UseVisualStyleBackColor = false;
+            // 
+            // nudMora
+            // 
+            this.nudMora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.nudMora.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nudMora.DecimalPlaces = 2;
+            this.nudMora.ForeColor = System.Drawing.SystemColors.Window;
+            this.nudMora.Location = new System.Drawing.Point(416, 315);
+            this.nudMora.Name = "nudMora";
+            this.nudMora.ReadOnly = true;
+            this.nudMora.Size = new System.Drawing.Size(150, 34);
+            this.nudMora.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label5.Location = new System.Drawing.Point(200, 319);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(161, 31);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Valor da mora:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.label6.Location = new System.Drawing.Point(200, 218);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(152, 23);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "geralmente R$0,33";
             // 
             // formBase
             // 
@@ -278,6 +335,9 @@ namespace baseRR
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(882, 565);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.nudMora);
             this.Controls.Add(this.chkbAtrasado);
             this.Controls.Add(this.chkbDesconto);
             this.Controls.Add(this.btnCalc);
@@ -302,12 +362,13 @@ namespace baseRR
             this.Name = "formBase";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Raw Reminder";
+            this.Text = "MPA";
             this.Load += new System.EventHandler(this.formBase_Load);
             this.pButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudJuros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDesconto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMora)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,6 +396,9 @@ namespace baseRR
         private System.Windows.Forms.NumericUpDown nudDesconto;
         private System.Windows.Forms.CheckBox chkbDesconto;
         private System.Windows.Forms.CheckBox chkbAtrasado;
+        private System.Windows.Forms.NumericUpDown nudMora;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 

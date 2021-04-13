@@ -12,12 +12,15 @@ namespace baseRR
 {
     public partial class formBase : Form
     {
+        private const long maxValue = Int64.MaxValue;
+
         public formBase()
         {
             InitializeComponent();
-            nudDesconto.Maximum = Int64.MaxValue;
-            nudJuros.Maximum = Int64.MaxValue;
-            nudValor.Maximum = Int64.MaxValue;
+            nudDesconto.Maximum = maxValue;
+            nudJuros.Maximum = maxValue;
+            nudValor.Maximum = maxValue;
+            nudMora.Maximum = maxValue;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -84,6 +87,9 @@ namespace baseRR
                 }
                 int Dias = DataAtual.Subtract(AnosT.AddMonths(Meses)).Days;
 
+                double mora = (double)nudJuros.Value * Dias;
+                nudMora.Value = (decimal)mora;
+
                 if (chkbAtrasado.Checked)
                 {
                     desc1 = 0;
@@ -91,13 +97,13 @@ namespace baseRR
 
                 if (chkbDesconto.Checked)
                 {
-                    double valorJ = valor * 2 / 100 + ((double)nudJuros.Value * Dias) + valor - (valor * desc2);
-                    txtbResul.Text = $"R${valorJ.ToString("N2")}";
+                    double valorJ = valor * 2 / 100 + (mora) + valor - (valor * desc2);
+                    txtbResul.Text = $"R${valorJ:N2}";
                 }
                 else
                 {
                     double valorJ = valor * 2 / 100 + ((double)nudJuros.Value * Dias) + valor - desc1;
-                    txtbResul.Text = $"R${valorJ.ToString("N2")}";
+                    txtbResul.Text = $"R${valorJ:N2}";
                 }
 
             }
@@ -124,11 +130,11 @@ namespace baseRR
 
                 if (chkbDesconto.Checked)
                 {
-                    txtbResul.Text = $"R${SemJP.ToString("N2")}";
+                    txtbResul.Text = $"R${SemJP:N2}";
                 }
                 else
                 {
-                    txtbResul.Text = $"R${semJ.ToString("N2")}";
+                    txtbResul.Text = $"R${semJ:N2}";
                 }
             }
         }
