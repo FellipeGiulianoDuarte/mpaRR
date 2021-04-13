@@ -21,6 +21,7 @@ namespace baseRR
             nudJuros.Maximum = maxValue;
             nudValor.Maximum = maxValue;
             nudMora.Maximum = maxValue;
+            nudResJuros.Maximum = maxValue;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -54,6 +55,8 @@ namespace baseRR
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
+            nudResJuros.Value = 0;
+            nudMora.Value = 0;
             //valores
             double valor = (double)nudValor.Value;
             double desc1 = (double)nudDesconto.Value;
@@ -100,8 +103,10 @@ namespace baseRR
                 }
                 int Dias = DataAtual.Subtract(AnosT.AddMonths(Meses)).Days;
 
+                double ResJuros = (double)nudValor.Value * 2 / 100;
                 double mora = (double)nudJuros.Value * Dias;
                 nudMora.Value = (decimal)mora;
+                nudResJuros.Value = (decimal)ResJuros;
 
                 if (chkbAtrasado.Checked)
                 {
