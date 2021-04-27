@@ -17,6 +17,7 @@ namespace baseRR
         public formBase()
         {
             InitializeComponent();
+            //definir limites
             nudDesconto.Maximum = maxValue;
             nudJuros.Maximum = maxValue;
             nudValor.Maximum = maxValue;
@@ -24,30 +25,25 @@ namespace baseRR
             nudResJuros.Maximum = maxValue;
         }
 
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            //sair do app pelo botao
             Application.Exit();
-        }
-
-        private void formBase_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nudJuros_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void chkbCalendario_CheckedChanged(object sender, EventArgs e)
         {
+            //botao de exibir calendario
             if (chkbCalendario.Checked == true)
             {
+                //exibe
                 chkbCalendario.Text = "Ocultar calendário";
                 mcMes.Visible = true;
             }
             if (chkbCalendario.Checked == false)
             {
+                //oculta
                 chkbCalendario.Text = "Exibir calendário";
                 mcMes.Visible = false;
             }
@@ -55,6 +51,7 @@ namespace baseRR
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
+            //limpar valores
             nudResJuros.Value = 0;
             nudMora.Value = 0;
             //valores
@@ -66,17 +63,21 @@ namespace baseRR
             DateTime DataVencimento = dtpVencimento.Value;
             DateTime DataAtual = DateTime.Now;
 
+            //com desconto em %
             double desc2 = desc1 / 100;
             double SemJP = valor - (desc2 * valor);
 
+            //vencimento hoje
             if(DateTime.Now.Date.CompareTo(dtpVencimento.Value.Date) == 0)
             {
                 if (chkbDesconto.Checked)
                 {
+                    //se for em %
                     txtbResul.Text = $"R${SemJP:N2}";
                 }
                 else
                 {
+                    //se n for em %
                     txtbResul.Text = $"R${semJ:N2}";
                 }
             }
@@ -103,6 +104,7 @@ namespace baseRR
                 }
                 int Dias = DataAtual.Subtract(AnosT.AddMonths(Meses)).Days;
 
+                //definicao de dados
                 double ResJuros = (double)nudValor.Value * 2 / 100;
                 double mora = (double)nudJuros.Value * Dias;
                 nudMora.Value = (decimal)mora;
@@ -110,17 +112,20 @@ namespace baseRR
 
                 if (chkbAtrasado.Checked)
                 {
+                    //anular desconto
                     desc1 = 0;
                 }
 
                 if (chkbDesconto.Checked)
                 {
+                    //exibir desconto em %
                     double valorJ = valor * 2 / 100 + (mora) + valor - (valor * desc2);
                     txtbResul.Text = $"R${valorJ:N2}";
                 }
                 else
                 {
-                    double valorJ = valor * 2 / 100 + ((double)nudJuros.Value * Dias) + valor - desc1;
+                    //desconto em R$
+                    double valorJ = valor * 2 / 100 + (mora) + valor - desc1;
                     txtbResul.Text = $"R${valorJ:N2}";
                 }
 
@@ -148,27 +153,31 @@ namespace baseRR
 
                 if (chkbDesconto.Checked)
                 {
+                    //pagamento adiantado com desconto em %
                     txtbResul.Text = $"R${SemJP:N2}";
                 }
                 else
                 {
-                    txtbResul.Text = $"R${semJ:N2}";
+                        //pagamento adiantado com desconto em R$
+                        txtbResul.Text = $"R${semJ:N2}";
                 }
             }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            //limpar campos
             nudDesconto.Value = 0;
             nudJuros.Value = (decimal)0.33;
             nudMora.Value = 0;
             nudResJuros.Value = 0;
             nudValor.Value = 0;
-            txtbResul.Text =" ";
+            txtbResul.Clear();
         }
 
         private void nudValor_ValueChanged(object sender, EventArgs e)
         {
+            //bloquear botao de calcular enquanto nao tiver valor
             if (nudValor.Value == 0)
             {
                 btnCalc.Enabled = false;
@@ -181,14 +190,31 @@ namespace baseRR
 
         private void chkbDesconto_CheckedChanged(object sender, EventArgs e)
         {
+            //trocar desconto para porcentagem
             if (chkbDesconto.Checked)
             {
                 nudDesconto.Maximum = 100;
+                chkbDEP.Checked = true;
             }
             if (chkbDesconto.Checked == false)
             {
+                chkbDEP.Checked = false;
                 nudDesconto.Maximum = maxValue;
             }
+        }
+
+        private void chkbAtrasado_CheckedChanged(object sender, EventArgs e)
+        {
+            //botao checked
+            if (chkbAtrasado.Checked)
+            {
+                chkbAPD.Checked = true;
+            }
+            if (chkbAtrasado.Checked == false)
+            {
+                chkbAPD.Checked = false;
+            }
+
         }
     }
 }

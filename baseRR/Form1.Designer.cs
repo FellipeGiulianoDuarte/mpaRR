@@ -55,15 +55,18 @@ namespace baseRR
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkbAPD = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.nudResJuros = new System.Windows.Forms.NumericUpDown();
             this.btnClear = new System.Windows.Forms.Button();
+            this.chkbDEP = new System.Windows.Forms.CheckBox();
             this.pButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudJuros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDesconto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMora)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudResJuros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -224,7 +227,6 @@ namespace baseRR
             0,
             0,
             131072});
-            this.nudJuros.ValueChanged += new System.EventHandler(this.nudJuros_ValueChanged);
             // 
             // nudDesconto
             // 
@@ -256,7 +258,7 @@ namespace baseRR
             this.dtpVencimento.Location = new System.Drawing.Point(416, 120);
             this.dtpVencimento.Name = "dtpVencimento";
             this.dtpVencimento.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpVencimento.Size = new System.Drawing.Size(150, 38);
+            this.dtpVencimento.Size = new System.Drawing.Size(153, 38);
             this.dtpVencimento.TabIndex = 14;
             // 
             // mcMes
@@ -323,6 +325,7 @@ namespace baseRR
             this.chkbAtrasado.TabIndex = 20;
             this.chkbAtrasado.Text = "Atrasado perde desconto";
             this.chkbAtrasado.UseVisualStyleBackColor = false;
+            this.chkbAtrasado.CheckedChanged += new System.EventHandler(this.chkbAtrasado_CheckedChanged);
             // 
             // nudMora
             // 
@@ -360,10 +363,23 @@ namespace baseRR
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.chkbAPD);
             this.panel1.Location = new System.Drawing.Point(569, 55);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(22, 415);
             this.panel1.TabIndex = 24;
+            // 
+            // chkbAPD
+            // 
+            this.chkbAPD.AutoSize = true;
+            this.chkbAPD.Enabled = false;
+            this.chkbAPD.Location = new System.Drawing.Point(4, 376);
+            this.chkbAPD.Name = "chkbAPD";
+            this.chkbAPD.Size = new System.Drawing.Size(85, 35);
+            this.chkbAPD.TabIndex = 28;
+            this.chkbAPD.TabStop = false;
+            this.chkbAPD.Text = "chkb";
+            this.chkbAPD.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -399,12 +415,25 @@ namespace baseRR
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // chkbDEP
+            // 
+            this.chkbDEP.AutoSize = true;
+            this.chkbDEP.Enabled = false;
+            this.chkbDEP.Location = new System.Drawing.Point(626, 383);
+            this.chkbDEP.Name = "chkbDEP";
+            this.chkbDEP.Size = new System.Drawing.Size(143, 35);
+            this.chkbDEP.TabIndex = 28;
+            this.chkbDEP.TabStop = false;
+            this.chkbDEP.Text = "checkBox1";
+            this.chkbDEP.UseVisualStyleBackColor = true;
+            // 
             // formBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(68)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(882, 565);
+            this.Controls.Add(this.chkbAtrasado);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.nudResJuros);
@@ -412,7 +441,6 @@ namespace baseRR
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.nudMora);
-            this.Controls.Add(this.chkbAtrasado);
             this.Controls.Add(this.chkbDesconto);
             this.Controls.Add(this.btnCalc);
             this.Controls.Add(this.chkbCalendario);
@@ -428,6 +456,7 @@ namespace baseRR
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pButtons);
+            this.Controls.Add(this.chkbDEP);
             this.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.Transparent;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -437,13 +466,14 @@ namespace baseRR
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MPA";
-            this.Load += new System.EventHandler(this.formBase_Load);
             this.pButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudJuros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDesconto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMora)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudResJuros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -480,6 +510,8 @@ namespace baseRR
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown nudResJuros;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.CheckBox chkbAPD;
+        private System.Windows.Forms.CheckBox chkbDEP;
     }
 }
 

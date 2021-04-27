@@ -8,24 +8,19 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\vagner\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\2021102558\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vagner\\Desktop\\facul\\mpa.baseRR\\baseRR\\baseRR.csproj",
+      "projectUniqueName": "C:\\Users\\2021102558\\Desktop\\facul\\mpa.baseRR\\baseRR\\baseRR.csproj",
       "projectName": "baseRR",
-      "projectPath": "C:\\Users\\vagner\\Desktop\\facul\\mpa.baseRR\\baseRR\\baseRR.csproj",
-      "packagesPath": "C:\\Users\\vagner\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vagner\\Desktop\\facul\\mpa.baseRR\\baseRR\\obj\\",
+      "projectPath": "C:\\Users\\2021102558\\Desktop\\facul\\mpa.baseRR\\baseRR\\baseRR.csproj",
+      "packagesPath": "C:\\Users\\2021102558\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\2021102558\\Desktop\\facul\\mpa.baseRR\\baseRR\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\vagner\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\2021102558\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -68,7 +63,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
